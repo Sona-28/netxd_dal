@@ -1,7 +1,7 @@
 package netxddalinterfaces
 
 import (
-	models "netxd_project/netxd_dal/netxd_dal_models"
+	models "github.com/Sona-28/netxd_dal/netxd_dal_models"
 )
 
 type ICustomer interface {
