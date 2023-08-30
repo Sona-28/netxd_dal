@@ -1,11 +1,11 @@
-package service
+package netxd_dal
 
 import (
 	"context"
 	"fmt"
 	"log"
-	interfaces "github.com/Sona-28/netxd_dal/netxd_dal_interfaces"
-	models "github.com/Sona-28/netxd_dal/netxd_dal_models"
+	interfaces "netxd_dal/netxd_dal_interfaces"
+	models "netxd_dal/netxd_dal_models"
 	"reflect"
 	"time"
 	"go.mongodb.org/mongo-driver/bson"
@@ -24,7 +24,7 @@ func InitCustomer(collection *mongo.Collection, ctx context.Context) interfaces.
 func (c *Cust) CreateCustomer(user *models.Customer) (*models.CustomerResponse, error) {
 	indexModel := []mongo.IndexModel{
 		{
-			Keys:    bson.D{{Key: "customer_id", Value: 1}}, // 1 for ascending, -1 for descending
+			Keys:    bson.D{Key: "customer_id", Value: 1}, // 1 for ascending, -1 for descending
 			Options: options.Index().SetUnique(true),
 		},
 	}

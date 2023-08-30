@@ -1,4 +1,4 @@
-package netxddalmodels
+package netxd_dal_models
 
 type Customer struct {
 	CustomerId int64 `json:"customer_id" bson:"customer_id"`
